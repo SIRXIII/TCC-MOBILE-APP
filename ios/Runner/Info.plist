@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSFaceIDUsageDescription</key>
+    <string>Use Face ID to sign in</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>TCC</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.599053543859-tjanjprg36p9iugvt8k84hea4jdlj0hn</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Travel Clothing Club may access your media library to provide a more personalized and enjoyable app experience.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Travel Clothing Club may use Bluetooth to connect with nearby accessories or travel devices for a smoother experience.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Travel Clothing Club needs access to your calendar to help you plan and manage your travel schedules easily.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs camera access to take photos for refund requests, profile pictures, and item verification</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Travel Clothing Club may access your contacts to help you share travel plans or clothing recommendations with friends.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Travel Clothing Club needs access to your location to provide ride services</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Travel Clothing Club needs access to your location to provide ride services</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Travel Clothing Club needs access to your location to provide ride services</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs permission to record videos</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Travel Clothing Club may use motion data to enhance travel-related features and improve app performance.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs permission to save photos to your library for receipts and order confirmations</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs photo library access to select images for refund requests, profile pictures, and item uploads</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Travel Clothing Club may integrate with Siri to let you manage your travel or clothing preferences using voice commands.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Travel Clothing Club may use speech recognition to enable voice commands for easier navigation and search.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+		<string>fetch</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+</dict>
+</plist>

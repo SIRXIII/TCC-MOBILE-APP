@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "599053543859",
+    "project_id": "travelclothingclub",
+    "storage_bucket": "travelclothingclub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599053543859:android:48fd20ecb3688f6bc203c6",
+        "android_client_info": {
+          "package_name": "com.tcc.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599053543859-3g6tdb5cqbenij24blih9fh31n7s245t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcc.app",
+            "certificate_hash": "e19644160fea5405158cec71a27817549c87ffea"
+          }
+        },
+        {
+          "client_id": "599053543859-rt92hs0ngbbe61csdr1rgbn2uk87pfr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcc.app",
+            "certificate_hash": "afcf17d63027ea814ee9f789dd37fe4a0c487924"
+          }
+        },
+        {
+          "client_id": "599053543859-8f7givg1eacc1jnffut08caee8fjplt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGXN5DIF3JvDjjrLL-hqSfJUOKM3wdcow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599053543859-8f7givg1eacc1jnffut08caee8fjplt8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599053543859-2232jmg77r76qcgipkk6i1bn3ocd340o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "travelclothingclub.com",
+                "app_store_id": "6754902957"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599053543859:android:178b0f7e01ccd760c203c6",
+        "android_client_info": {
+          "package_name": "com.travel_clothing_club.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599053543859-3n414ebk1e3qbjg149qdjuods8d35stn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travel_clothing_club.app",
+            "certificate_hash": "afcf17d63027ea814ee9f789dd37fe4a0c487924"
+          }
+        },
+        {
+          "client_id": "599053543859-kcel2i2bqc1do0ch28n65ngctbdng80d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travel_clothing_club.app",
+            "certificate_hash": "e19644160fea5405158cec71a27817549c87ffea"
+          }
+        },
+        {
+          "client_id": "599053543859-mj0ugp1j25m494mle5lgbsgtju79hugq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travel_clothing_club.app",
+            "certificate_hash": "645b5631bee4d25d8403ab229c893e03c9c0cf75"
+          }
+        },
+        {
+          "client_id": "599053543859-8f7givg1eacc1jnffut08caee8fjplt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGXN5DIF3JvDjjrLL-hqSfJUOKM3wdcow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599053543859-8f7givg1eacc1jnffut08caee8fjplt8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599053543859-2232jmg77r76qcgipkk6i1bn3ocd340o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "travelclothingclub.com",
+                "app_store_id": "6754902957"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

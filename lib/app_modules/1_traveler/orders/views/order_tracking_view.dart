@@ -463,9 +463,6 @@ class OrderTrackingView extends StatelessWidget {
                 Spacer(),
                 InkWell(
                   onTap: () {
-                    debugPrint(
-                      'Chat with Rider --> ${_appGlobal.getSelectedOrder.getOrderIdName()} - ${_appGlobal.getSelectedOrder.rider?.getRiderId()}',
-                    );
 
                     AppGlobal.instance.chatWith = 'Rider';
                     AppGlobal.instance.chatWithName =
@@ -648,17 +645,8 @@ class OrderTrackingView extends StatelessWidget {
                 Spacer(),
                 InkWell(
                   onTap: () {
-                    debugPrint(
-                      'Chat with Partner --> ${_appGlobal.getSelectedOrder.getOrderId()} - ${_appGlobal.getSelectedOrder.partner?.getId() ?? ''}',
-                    );
 
-                    debugPrint(
-                      'Order Id --> ${_appGlobal.getSelectedOrder.getOrderId()}',
-                    );
 
-                    debugPrint(
-                      'Ticket Id --> ${_appGlobal.getSelectedOrder.getTicketId()}',
-                    );
 
                     _appGlobal.chatWith = 'Partner';
                     _appGlobal.ticketId = _appGlobal.getSelectedOrder

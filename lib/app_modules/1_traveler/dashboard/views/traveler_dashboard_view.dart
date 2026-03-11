@@ -31,7 +31,6 @@ class _TravelerDashboardViewState extends State<TravelerDashboardView> {
 
   /// --> _initData
   Future<void> _initData() async {
-    debugPrint("🚀 Initializing Traveler Dashboard...");
     // call your initial API or setup logic here
     userPreferences.getLoggedInUserData();
 

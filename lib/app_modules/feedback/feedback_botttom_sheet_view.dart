@@ -306,13 +306,6 @@ class FeedbackBottomSheetView extends StatelessWidget {
                         onPressed: () {
                           // TODO: Hit review API
 
-                          debugPrint(
-                            'Rating --> ${controller.selectedRating.value}',
-                          );
-                          debugPrint(
-                            'Rating --> ${controller.feedBackReviewController.value.text.toString()}',
-                          );
-                          debugPrint('Rating --> ${deliveries.id}');
                           controller.addFeedbackReviewApiRequest(
                             deliveries.id.toString(),
                             deliveries.rider?.getId() ?? '',

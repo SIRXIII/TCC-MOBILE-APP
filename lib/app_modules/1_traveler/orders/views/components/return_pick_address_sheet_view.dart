@@ -148,8 +148,6 @@ void returnPickAddressBottomSheet({required Order order}) {
                       selectedTime.value.toString(),
                       order,
                     );
-                    debugPrint("Selected Address: ${addressController.text}");
-                    debugPrint("Selected Time: ${selectedTime.value}");
                   },
                   isEnabled: controller.requestReturnApiRequestLoader.isFalse,
                 ),

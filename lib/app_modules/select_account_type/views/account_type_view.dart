@@ -249,7 +249,6 @@ class _AccountTypeViewState extends State<AccountTypeView> {
   }
 
   void _handleSignUp() {
-    print('Selected account type: $_selectedAccountType');
 
     if (_selectedAccountType == 'Traveler') {
       Get.toNamed(AppRoutes.signup);

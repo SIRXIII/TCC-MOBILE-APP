@@ -95,7 +95,6 @@ class ImageCompositor {
 
       return file;
     } catch (e) {
-      debugPrint('Error compositing images: $e');
       return null;
     }
   }
@@ -205,7 +204,6 @@ class ImageCompositor {
 
       return file;
     } catch (e) {
-      debugPrint('Error in smart composite: $e');
       return null;
     }
   }

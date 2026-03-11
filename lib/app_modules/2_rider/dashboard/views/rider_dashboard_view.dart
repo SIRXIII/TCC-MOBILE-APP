@@ -35,7 +35,6 @@ class _RiderDashboardViewState extends State<RiderDashboardView> {
   }
 
   Future<void> _initData() async {
-    debugPrint("🚀 Initializing Rider Dashboard...");
     // call your initial API or setup logic here
     UserPreferences.instance.getLoggedInUserData();
 
@@ -143,7 +142,6 @@ class _RiderDashboardViewState extends State<RiderDashboardView> {
                                 ? SizedBox.shrink()
                                 : InkWell(
                                     onTap: () {
-                                      debugPrint('Change Location');
                                     },
                                     child: Row(
                                       children: [

@@ -175,7 +175,6 @@ class Deliveries {
   }
 
   bool isReturnsOrder() {
-    debugPrint('isReturnsOrder --> ${getStaus()}');
 
     if (getStaus() == OrderStatus.return_requested.value ||
         getStaus() == OrderStatus.returned.value) {

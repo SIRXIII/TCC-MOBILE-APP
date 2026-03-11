@@ -182,7 +182,6 @@ class TravelerNotificationsListView extends StatelessWidget {
   }) {
     return InkWell(
       onTap: () {
-        debugPrint('_buildNotificationCard --> ');
         controller.updateNotificationsReadApiRequest(notification.getId());
       },
       child: Padding(

@@ -266,7 +266,6 @@ class _LoginViewState extends State<LoginView> {
   }
 
   void _handleGoogleSignIn() {
-    print('Google sign in');
     // Implement Google sign in
   }
 

@@ -195,7 +195,6 @@ class OrderTrackingController extends GetxController {
   var addSupportTicketApiRequestLoader = false.obs;
 
   Future<void> addSupportTicketApiRequest(int orderId) async {
-    debugPrint('addSupportTicketApiRequest --> ');
 
     addSupportTicketApiRequestLoader(true);
 

@@ -213,7 +213,6 @@ class CartController extends GetxController {
   final TravelerHomeController travelerHomeController = Get.find();
 
   Future<void> placeOrderApiResuest() async {
-    debugPrint('placeOrderApiResuest --> ');
     // CartItem item = cartItems[0];
 
     placeOrderApiResuestLoader(true);

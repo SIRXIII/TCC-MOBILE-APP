@@ -74,7 +74,6 @@ class AuthController extends GetxController {
   // -----------------------------------
 
   Future<void> travelerRegisterApiRequest() async {
-    debugPrint('travelerRegisterApiRequest --> ');
 
     if (nameController.value.text.isEmpty) {
       appToastView(title: 'Please enter name');
@@ -100,7 +99,6 @@ class AuthController extends GetxController {
     // var jsonData = await jsonDecode(response.toString());
     final authApiResponse = authApiResponseFromJson(response.toString());
 
-    debugPrint('registerUserApiRequest --> ');
 
     if (response != null) {
       if (authApiResponse.success ?? false) {
@@ -137,7 +135,6 @@ class AuthController extends GetxController {
   }
 
   Future<void> skipRegisterApiRequest() async {
-    debugPrint('skipRegisterApiRequest --> ');
 
     isLoading(true);
 
@@ -152,7 +149,6 @@ class AuthController extends GetxController {
     // var jsonData = await jsonDecode(response.toString());
     final authApiResponse = authApiResponseFromJson(response.toString());
 
-    debugPrint('skipRegisterApiRequest --> ');
 
     final AccountTypeController controller = Get.find<AccountTypeController>();
 
@@ -188,9 +184,6 @@ class AuthController extends GetxController {
   // -----------------------------------
   var loginWithGoogleApiRequestLoader = false.obs;
   Future<void> loginWithGoogleApiRequest(String accessToken) async {
-    debugPrint(
-      'loginWithGoogleApiRequest --> ${UserPreferences.instance.selectedUserType}',
-    );
 
     try {
       loginWithGoogleApiRequestLoader(true);
@@ -247,9 +240,6 @@ class AuthController extends GetxController {
   // travelerLoginApiRequest
   // -----------------------------------
   Future<void> travelerLoginApiRequest() async {
-    debugPrint(
-      'loginUserApiRequest --> ${UserPreferences.instance.selectedUserType}',
-    );
 
     if (emailController.text.isEmpty) {
       appToastView(title: 'Please enter email');
@@ -317,9 +307,6 @@ class AuthController extends GetxController {
   var travelerForgotPasswordApiRequestLoading = false.obs;
 
   Future<void> travelerForgotPasswordApiRequest() async {
-    debugPrint(
-      'travelerForgotPasswordApiRequest --> ${UserPreferences.instance.selectedUserType}',
-    );
     // var deviceToken = await FirebaseMessaging.instance.getToken();
     // debugPrint('...................$deviceToken');
 
@@ -373,7 +360,6 @@ class AuthController extends GetxController {
     String longitude,
     String address,
   ) async {
-    debugPrint('updateLocationApiRequest --> ');
 
     if (postalCode == '') {
       postalCode = '51000';
@@ -407,7 +393,6 @@ class AuthController extends GetxController {
 
   // --> profileApiRequest
   Future<void> profileApiRequest() async {
-    debugPrint('profileApiRequest -->');
 
     // try {
     var response = await AuthRepository.instance.userProfile();
@@ -439,10 +424,6 @@ class AuthController extends GetxController {
 
   /// --> profileApiRequest
   void updateProfile() {
-    debugPrint('updateProfile -->');
-    debugPrint(
-      'updateProfile --> ${UserPreferences.instance.selectedUserType}',
-    );
 
     if (UserPreferences.instance.selectedUserType?.name ==
         AccountTypeEnum.traveler.name) {
@@ -545,7 +526,6 @@ class AuthController extends GetxController {
   }
 
   Future<void> updateProfileApiRequest() async {
-    debugPrint('updateProfileApiRequest --> ');
     try {
       isLoading(true);
 
@@ -591,9 +571,7 @@ class AuthController extends GetxController {
               updateApiResponse.message.toString(),
         );
       }
-      debugPrint('Profile updated successfully: ${updateApiResponse.message}');
     } catch (e) {
-      debugPrint('saveLicenseImagesApiRequest --> error: $e');
     } finally {
       isLoading(false);
     }
@@ -603,13 +581,6 @@ class AuthController extends GetxController {
   /// Update FCM Token
   // -----------------------------------
   Future<void> setupProfileApiRequest() async {
-    debugPrint('setupProfileApiRequest --> ');
-    debugPrint(
-      'setupProfileApiRequest --> ${heightInCmController.text.toString()}',
-    );
-    debugPrint(
-      'setupProfileApiRequest --> ${chestInCmController.text.toString()}',
-    );
 
     if (heightInCmController.text.isEmpty) {
       appToastView(title: 'Height(cm) is required!');
@@ -665,9 +636,7 @@ class AuthController extends GetxController {
               updateApiResponse.message.toString(),
         );
       }
-      debugPrint('Profile updated successfully: ${updateApiResponse.message}');
     } catch (e) {
-      debugPrint('saveLicenseImagesApiRequest --> error: $e');
     } finally {
       isLoading(false);
     }
@@ -677,10 +646,8 @@ class AuthController extends GetxController {
   /// Update FCM Token
   // -----------------------------------
   Future<void> updateFcmTokenApiRequest() async {
-    debugPrint('updateFcmTokenApiRequest --> ');
 
     var deviceToken = await FirebaseMessaging.instance.getToken();
-    debugPrint('...................$deviceToken');
 
     var response = await AuthRepository.instance.updateFcmToken({
       'fcm_token': deviceToken ?? '',
@@ -704,7 +671,6 @@ class AuthController extends GetxController {
   var changePasswordApiRequestLoader = false.obs;
 
   Future<void> changePasswordApiRequest() async {
-    debugPrint('changePasswordApiRequest --> ');
     if (changePasswordController.text.isEmpty) {
       appToastView(title: 'Please enter current password');
       return;

@@ -105,7 +105,6 @@ class _RiderSupportViewState extends State<RiderSupportView> {
   Widget _buildRefundRequestCard(SupportTicketModel data) {
     return InkWell(
       onTap: () {
-        debugPrint('onTap --> ${data.orderId}');
 
         if (data.orderId != null) {
           _appGlobal.chatWith = 'Partner';

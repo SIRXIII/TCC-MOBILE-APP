@@ -253,7 +253,6 @@ class _SignUpViewState extends State<SignUpView> {
   }
 
   void _handleGoogleSignUp() {
-    print('Google sign up');
 
     // Implement Google sign up
   }

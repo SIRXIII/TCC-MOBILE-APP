@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // -----------------------------------
@@ -53,8 +52,6 @@ Future<void> initMessaging() async {
 
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) async {
     // NotificationController.instance.getNotifications();
-    debugPrint('getting the message opened app ${message.data}');
-    debugPrint("message body: ${message.notification!.body.toString()}");
 
     var payload = message.data;
     if (payload.isNotEmpty) {
@@ -74,9 +71,6 @@ Future<void> initMessaging() async {
 Future<void> showNotification(String title, String body, var message) async {
   ///RemoteMessage
   try {
-    if (kDebugMode) {
-      // debugPrint("In Notification method");
-    }
     Random random = Random();
     int id = random.nextInt(1000);
     const NotificationDetails notificationDetails = NotificationDetails(
@@ -85,7 +79,6 @@ Future<void> showNotification(String title, String body, var message) async {
         "App",
         importance: Importance.high,
         priority: Priority.high,
-        // fullScreenIntent: true,
         playSound: true,
         timeoutAfter: 50000,
       ),
@@ -95,13 +88,6 @@ Future<void> showNotification(String title, String body, var message) async {
         presentAlert: true,
       ),
     );
-    if (kDebugMode) {
-      debugPrint("Notification Data");
-      debugPrint("title: ${title.toString()}");
-      debugPrint("body: ${body.toString()}");
-      debugPrint("id: ${id.toString()}");
-      debugPrint("message: ${message.data}");
-    }
     await flutterLocalNotificationsPlugin.show(
       id,
       title,
@@ -119,10 +105,8 @@ Future<void> showNotification(String title, String body, var message) async {
       notificationDetails,
       payload: message == null ? '' : jsonEncode(message.data),
     );
-  } on Exception catch (e) {
-    if (kDebugMode) {
-      debugPrint('Error>>>$e');
-    }
+  } on Exception catch (_) {
+    // Error handled silently in production
   }
 }
 
@@ -131,11 +115,7 @@ Future<void> showLocalNotification(
   String body,
   NotificationPayload payload,
 ) async {
-  ///RemoteMessage
   try {
-    if (kDebugMode) {
-      // debugPrint("In Notification method");
-    }
     Random random = Random();
     int id = random.nextInt(1000);
     const NotificationDetails notificationDetails = NotificationDetails(
@@ -154,13 +134,6 @@ Future<void> showLocalNotification(
         presentAlert: true,
       ),
     );
-    if (kDebugMode) {
-      debugPrint("Notification Data");
-      debugPrint("title: ${title.toString()}");
-      debugPrint("body: ${body.toString()}");
-      debugPrint("restId: ${payload.toString()}");
-      // debugPrint("message: ${message.data}");
-    }
     await flutterLocalNotificationsPlugin.show(
       id,
       title,
@@ -178,10 +151,8 @@ Future<void> showLocalNotification(
       notificationDetails,
       payload: jsonEncode(payload),
     );
-  } on Exception catch (e) {
-    if (kDebugMode) {
-      debugPrint('Error>>>$e');
-    }
+  } on Exception catch (_) {
+    // Error handled silently in production
   }
 }
 
@@ -191,8 +162,6 @@ Future<void> showLocalNotification(
 // 0 for like, 1 for comment, 2 for post, 3 for follower, 4 for chat
 Future<void> forNotification(NotificationResponse notificationResponse) async {
   var payload = jsonDecode(notificationResponse.payload!);
-  debugPrint('notification payload: $payload');
-  debugPrint('tap on notifications');
 
   if (payload != null) {
     if (payload['notification_type'] == '4') {
@@ -218,12 +187,6 @@ Future<void> selectNotification(payload) async {
     } else if (payload['type'] == '2') {
     } else if (payload['type'] == '9') {}
     // 0 for like, 1 for comment, 2 for post, 3 for follower, 4 for chat
-  }
-  if (kDebugMode) {
-    // debugPrint('this is local notification in background');
-  }
-  if (kDebugMode) {
-    // debugPrint("gooing to orderListScreen");
   }
 }
 

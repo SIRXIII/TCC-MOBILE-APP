@@ -211,7 +211,6 @@ class TravelerOrdersController extends GetxController {
   }
 
   Future<void> getOrdersApiRequest() async {
-    debugPrint('getOrdersApiRequest --> ');
 
     getOrdersApiRequestLoader(_ordersList.isBlank);
 
@@ -243,7 +242,6 @@ class TravelerOrdersController extends GetxController {
     String time,
     Order selectedOrder,
   ) async {
-    debugPrint('requestReturnApiRequest --> ');
 
     requestReturnApiRequestLoader(true);
 

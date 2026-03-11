@@ -33,7 +33,6 @@ class RiderSupportController extends GetxController {
   var addSupportTicketApiRequestLoader = false.obs;
 
   Future<void> addSupportTicketApiRequest() async {
-    debugPrint('addSupportTicketApiRequest --> ');
 
     if (selectedTicketType == '') {
       appToastView(title: 'Support Ticket type is required');
@@ -86,7 +85,6 @@ class RiderSupportController extends GetxController {
   }
 
   Future<void> getSupportTicketsApiRequest() async {
-    debugPrint('getSupportTicketsApiRequest --> ');
 
     getSupportTicketsApiRequestLoader(true);
 

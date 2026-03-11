@@ -33,14 +33,12 @@ class SplashController extends GetxController {
     StripeService.init();
 
     if (UserPreferences.instance.isLoggedIn()) {
-      debugPrint('✅ User is logged in');
 
       AppLogger.debugPrintLogs(
         'User Data',
         UserPreferences.instance.getUserData()?.traveler?.getName() ?? '',
       );
     } else {
-      debugPrint('❌ User is logged out');
     }
 
     // userPreferences.loadLoggedInUserType();

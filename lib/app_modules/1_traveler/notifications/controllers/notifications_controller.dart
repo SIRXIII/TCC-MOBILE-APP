@@ -62,7 +62,6 @@ class NotificationsController extends GetxController {
       .toList();
 
   Future<void> getNotificationsApiRequest() async {
-    debugPrint('getNotificationsApiRequest --> ');
 
     getNotificationsApiRequestLoader(true);
 
@@ -90,7 +89,6 @@ class NotificationsController extends GetxController {
   // var updateNotificationsReadApiRequestLoader = false.obs;
 
   Future<void> updateNotificationsReadApiRequest(String id) async {
-    debugPrint('updateNotificationsReadApiRequest --> ');
 
     getNotificationsApiRequestLoader(true);
 

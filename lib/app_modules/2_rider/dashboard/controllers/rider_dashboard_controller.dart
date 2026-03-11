@@ -8,10 +8,8 @@ import 'package:travel_clothing_club_flutter/service/location_service.dart';
 class RiderDashboardController extends GetxController {
   /// --> checkLocationPermission
   Future<void> checkLocationPermission() async {
-    debugPrint('Checking location permission...');
     try {
       final status = await Permission.location.status;
-      debugPrint('Checking location permission... $status');
 
       if (status == PermissionStatus.denied) {
         Get.toNamed(AppRoutes.locationPermission);
@@ -20,11 +18,9 @@ class RiderDashboardController extends GetxController {
           await LocationService.getCurrentLocationWithAddress();
         }
 
-        debugPrint('Location permission already granted');
       }
       // return status.isGranted;
     } catch (e) {
-      debugPrint('Error checking location permission: $e');
       // return false;
     }
   }

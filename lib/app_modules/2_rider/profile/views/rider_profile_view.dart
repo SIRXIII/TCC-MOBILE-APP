@@ -108,7 +108,6 @@ class RiderProfileView extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () {
-                        debugPrint('Open Edit Profile');
                         Get.toNamed(AppRoutes.travelerEditProfile);
                       },
                     ),

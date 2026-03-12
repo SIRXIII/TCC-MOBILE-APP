@@ -25,7 +25,6 @@ class _PusherChatViewState extends State<PusherChatView> {
   /// initState
   @override
   void initState() {
-    debugPrint('initState --> PusherChatView');
     super.initState();
     // chatController.loadMessages(AppGlobal.instance.chatWithId);
   }

@@ -225,7 +225,6 @@ class Order {
   }
 
   bool showRefundButton() {
-    debugPrint('showRefundButton --> $status');
     if (status == OrderStatus.returned.value) {
       return false;
     }

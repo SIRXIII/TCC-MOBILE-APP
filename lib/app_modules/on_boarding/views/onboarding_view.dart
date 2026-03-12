@@ -141,7 +141,6 @@ class OnboardingView extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      debugPrint('Try Demo');
                       AppGlobal.instance.openLink(AppConstants.virtualTryDemo);
                     },
                     child: appTextView(

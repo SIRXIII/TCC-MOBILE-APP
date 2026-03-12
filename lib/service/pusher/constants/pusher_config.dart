@@ -4,11 +4,11 @@
 // }
 
 class PusherConfig {
-  // 🔑 Pusher credentials
-  static const String appId = '2095894'; // backend only
-  static const String apiKey = 'fef5236eae31334c912c';
-  static const String secret = '3b495e75ca7c66cd1f1f'; // backend only
-  static const String cluster = 'us3';
+  // Pusher credentials - load from environment variables
+  static const String appId = String.fromEnvironment('PUSHER_APP_ID', defaultValue: '');
+  static const String apiKey = String.fromEnvironment('PUSHER_APP_KEY', defaultValue: '');
+  static const String secret = String.fromEnvironment('PUSHER_SECRET', defaultValue: ''); // backend only
+  static const String cluster = String.fromEnvironment('PUSHER_CLUSTER', defaultValue: 'us3');
 
   // 🔐 Channel options
   static const bool encrypted = true;

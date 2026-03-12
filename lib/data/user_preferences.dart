@@ -21,7 +21,6 @@ class UserPreferences extends GetxController {
   void onInit() {
     super.onInit();
 
-    debugPrint('UserPreferences --> onInit');
     init();
   }
 
@@ -67,7 +66,6 @@ class UserPreferences extends GetxController {
   Future<void> saveUserType(String userType) async {
     await _prefs?.setString(_keyUserType, userType);
 
-    debugPrint('saveUserType --> $userType');
     if (userType == 'Traveler') {
       _selectedAccountType.value = AccountTypeEnum.traveler;
     } else if (userType == 'Rider') {
@@ -99,7 +97,6 @@ class UserPreferences extends GetxController {
 
   // ✅ Clear session (logout)
   Future<void> clearUserData() async {
-    debugPrint('clearUserData -->');
     await _prefs?.remove(_keyUserData);
     await _prefs?.remove(_keyToken);
     await _prefs?.clear();
@@ -110,7 +107,6 @@ class UserPreferences extends GetxController {
   UserData get loggedInUserData => _loggedInUserData.value;
 
   void getLoggedInUserData() {
-    debugPrint('getLoggedInUserData -->');
     _loggedInUserData.value = getUserData() ?? UserData();
     getToken();
 
@@ -123,7 +119,6 @@ class UserPreferences extends GetxController {
 
   // ✅ clearStorageAndLogout
   Future<void> clearStorageAndLogout() async {
-    debugPrint('clearStorageAndLogout -->');
     await FirebaseAuth.instance.signOut();
     await clearUserData();
     Future.delayed(const Duration(milliseconds: 200), () {

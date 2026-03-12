@@ -95,9 +95,6 @@ class LoggedInUserData extends GetxController {
   // }
 
   void logoutConfirmationSheet(bool isTraveler) {
-    debugPrint(
-      'logoutConfirmationSheet --> ${UserPreferences.instance.selectedUserType}',
-    );
     Get.bottomSheet(
       Container(
         decoration: const BoxDecoration(
@@ -227,7 +224,6 @@ class LoggedInUserData extends GetxController {
   var logoutApiRequestLoader = false.obs;
 
   Future<void> logoutApiRequest(bool isTraveler) async {
-    debugPrint('logoutApiRequest --> ');
 
     logoutApiRequestLoader(true);
     var response = isTraveler
@@ -257,9 +253,6 @@ class LoggedInUserData extends GetxController {
 
   /// --> Delete Account
   void deleteAccountConfirmationSheetView(bool isTraveler) {
-    debugPrint(
-      'deleteAccountConfirmationSheetView --> ${UserPreferences.instance.selectedUserType}',
-    );
     Get.bottomSheet(
       Container(
         decoration: const BoxDecoration(

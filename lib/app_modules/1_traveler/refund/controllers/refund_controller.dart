@@ -41,7 +41,6 @@ class RefundController extends GetxController {
 
   void setSelectedReason(String reason) {
     _selectedReason.value = reason;
-    debugPrint('selectedReason --> $selectedReason');
     update();
   }
 
@@ -145,7 +144,6 @@ class RefundController extends GetxController {
   }
 
   Future<void> getRefundsRequestApiRequest() async {
-    debugPrint('getRefundsRequestApiRequest --> ');
 
     getRefundsRequestApiRequestLoader(true);
 
@@ -188,7 +186,6 @@ class RefundController extends GetxController {
   }
 
   Future<void> createRefundApiRequest() async {
-    debugPrint('createRefundApiRequest --> $selectedImages');
 
     if (selectedOrder == Order()) {
       appToastView(title: 'Order is is required');

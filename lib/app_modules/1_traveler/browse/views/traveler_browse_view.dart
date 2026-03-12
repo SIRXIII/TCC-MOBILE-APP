@@ -364,7 +364,6 @@ class TravelerBrowseView extends StatelessWidget {
 
     if (result != null) {
       // Handle the filter results
-      print('Applied filters: $result');
     }
   }
 

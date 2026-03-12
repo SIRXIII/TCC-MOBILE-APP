@@ -24,7 +24,6 @@ class GoogleAuthController extends GetxController {
   // -----------------------------------
 
   Future<void> loginWithGoogle() async {
-    debugPrint('-------- loginWithGoogle ---------------');
 
     try {
       isLoading(true);
@@ -49,11 +48,6 @@ class GoogleAuthController extends GetxController {
       ) async {
         var user = FirebaseAuth.instance.currentUser;
 
-        debugPrint('loginWithGoogle --> ${user.toString()}');
-        debugPrint('loginWithGoogle --> idToken --> ${googleAuth.idToken}');
-        debugPrint(
-          'loginWithGoogle --> accessToken --> ${googleAuth.accessToken}',
-        );
 
         AuthController.instance.loginWithGoogleApiRequest(
           googleAuth.accessToken ?? '',
@@ -73,7 +67,6 @@ class GoogleAuthController extends GetxController {
       });
     } catch (e) {
       appToastView(title: e.toString());
-      debugPrint('loginWithGoogle - catch --> ${e.toString()}');
 
       isLoading(false);
     }
@@ -96,7 +89,6 @@ class GoogleAuthController extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> loginWithApple() async {
-    debugPrint('loginWithApple');
     FirebaseAuth.instance.signOut().then((value) async {
       // To prevent replay attacks with the credential returned from Apple, we
       // include a nonce in the credential request. When signing in in with
@@ -115,7 +107,6 @@ class GoogleAuthController extends GetxController {
           nonce: nonce,
         );
 
-        debugPrint('loginWithApple --> ${appleCredential.authorizationCode}');
 
         // Create an `OAuthCredential` from the credential returned by Apple.
         final oauthCredential = OAuthProvider("apple.com").credential(
@@ -130,14 +121,7 @@ class GoogleAuthController extends GetxController {
         final displayName =
             '${appleCredential.givenName} ${appleCredential.familyName}';
 
-        debugPrint(
-          'loginWithApple -- User --> ${_auth.currentUser.toString()}',
-        );
 
-        debugPrint('userEmail: ${_auth.currentUser?.email ?? ''}');
-        debugPrint('displayName: ${_auth.currentUser?.displayName ?? ''}');
-        debugPrint('givenName: ${appleCredential.givenName ?? ''}');
-        debugPrint('familyName: ${appleCredential.familyName ?? ''}');
 
         final fixDisplayNameFromApple = [
           appleCredential.givenName ?? 'Guest',
@@ -159,7 +143,6 @@ class GoogleAuthController extends GetxController {
             email: _auth.currentUser?.email ?? '',
             phone: '');*/
       } catch (e) {
-        debugPrint('loginWithApple -- exception --> ${e.toString()}');
 
         // providerSocialLogin(
         //     firstName:'',

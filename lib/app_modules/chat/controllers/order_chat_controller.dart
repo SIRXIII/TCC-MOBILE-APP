@@ -115,7 +115,6 @@ class OrderChatController extends GetxController {
 
       // messageText.value = "";
     } catch (e) {
-      print("Send message error: $e");
       Get.snackbar("Error", "Unable to send message");
     } finally {
       isSending.value = false;

@@ -9,10 +9,8 @@ class TravelerDashboardController extends GetxController {
   final UserPreferences userPreferences = UserPreferences.instance;
 
   Future<void> checkLocationPermission() async {
-    debugPrint('Checking location permission...');
     try {
       final status = await Permission.location.status;
-      debugPrint('Checking location permission... $status');
 
       // Get.toNamed(AppRoutes.locationPermission);
       if (status == PermissionStatus.denied) {
@@ -23,11 +21,9 @@ class TravelerDashboardController extends GetxController {
         }
         // Get.toNamed(AppRoutes.locationPermission);
       } else {
-        debugPrint('Location permission already granted');
       }
       // return status.isGranted;
     } catch (e) {
-      debugPrint('Error checking location permission: $e');
       // return false;
     }
   }

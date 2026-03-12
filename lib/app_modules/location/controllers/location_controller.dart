@@ -42,7 +42,6 @@ class LocationController extends GetxController {
     } catch (e) {
       currentLocation.value = 'Error checking location';
       resetAddressDetails();
-      print('Error checking location status: $e');
     } finally {
       isLoading.value = false;
     }
@@ -80,7 +79,6 @@ class LocationController extends GetxController {
     } catch (e) {
       currentLocation.value = 'Error getting location';
       resetAddressDetails();
-      print('Error getting current location with address: $e');
     } finally {
       isLoading.value = false;
     }
@@ -117,7 +115,6 @@ class LocationController extends GetxController {
         currentLocation.value = '${city.value}, ${country.value}';
       }
     } catch (e) {
-      print('Error getting address from coordinates: $e');
     } finally {
       isLoading.value = false;
     }
@@ -143,7 +140,6 @@ class LocationController extends GetxController {
         currentLocation.value = '${city.value}, ${country.value}';
       }
     } catch (e) {
-      print('Error getting coordinates from address: $e');
     } finally {
       isLoading.value = false;
     }
@@ -168,7 +164,6 @@ class LocationController extends GetxController {
       }
     } catch (e) {
       currentLocation.value = 'Error requesting permission';
-      print('Error requesting location permission: $e');
     } finally {
       isLoading.value = false;
     }

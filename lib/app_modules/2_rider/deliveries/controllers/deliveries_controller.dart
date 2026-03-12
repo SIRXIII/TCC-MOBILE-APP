@@ -51,7 +51,6 @@ class DeliveriesController extends GetxController {
 
   final RxString searchText = ''.obs;
   void searchProducts(String query) {
-    debugPrint('setDestination --> $query');
     searchText.value = query;
     // productsApiRequest();
   }
@@ -121,7 +120,6 @@ class DeliveriesController extends GetxController {
   }
 
   int getCompletedCount() {
-    debugPrint('getCompletedCount --> ${filteredOrders.length}');
     return ordersList.where((order) => order.status == 'Delivered').length;
   }
 
@@ -208,7 +206,6 @@ class DeliveriesController extends GetxController {
 
   var getOrdersApiRequestLoader = false.obs;
   Future<void> getDeliveriesApiRequest() async {
-    debugPrint('getDeliveriesApiRequest --> ');
 
     getOrdersApiRequestLoader(_ordersList.isBlank);
 
@@ -237,7 +234,6 @@ class DeliveriesController extends GetxController {
   /// --> updateOrderStatusByOrderId
   var updateOrderStatusByOrderIdLoader = false.obs;
   Future<void> updateOrderStatusByOrderId(String orderId, String status) async {
-    debugPrint('updateOrderStatusByOrderId --> ');
 
     updateOrderStatusByOrderIdLoader(true);
 
@@ -270,7 +266,6 @@ class DeliveriesController extends GetxController {
     String riderId,
     String travelerId,
   ) async {
-    debugPrint('updateOrderStatusByOrderId --> ');
 
     if (selectedRating.value == 0) {
       appToastView(title: 'Rating is required!');

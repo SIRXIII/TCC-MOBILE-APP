@@ -36,10 +36,7 @@ class AITryOnController extends GetxController {
   void _checkFashnAIAvailability() {
     useFashnAI.value = FashnAIService.isConfigured();
     if (useFashnAI.value) {
-      debugPrint('✅ Fashn.AI is configured - will use professional AI try-on');
     } else {
-      debugPrint('ℹ️ Fashn.AI not configured - will use custom compositor');
-      debugPrint('   Add FASHN_API_KEY to .env to enable professional try-on');
     }
   }
 
@@ -109,7 +106,6 @@ class AITryOnController extends GetxController {
 
       // Detect garment category
       final category = FashnAIService.detectCategory(currentProduct!);
-      debugPrint('📦 Detected category: $category');
 
       performTryOn(
         modelImage: selectedImage.value!,
@@ -117,7 +113,6 @@ class AITryOnController extends GetxController {
       );
     } catch (e) {
       isLoading.value = false;
-      debugPrint('❌ Fashn.AI try-on failed: $e');
 
       String errorMsg = 'Try-on failed. Please try again.';
       final errorStr = e.toString().toLowerCase();
@@ -230,28 +225,20 @@ class AITryOnController extends GetxController {
           final status = statusData['status'];
 
           if (status == 'completed') {
-            print('Prediction completed.');
             return statusData;
           } else if (status == 'failed') {
-            print('Prediction failed: ${statusData['error']}');
             return statusData;
           } else if (['starting', 'in_queue', 'processing'].contains(status)) {
-            print('Prediction status: $status');
             await Future.delayed(
               Duration(seconds: 3),
             ); // Wait for 3 seconds before polling again
           } else {
-            print('Unknown prediction status: $status');
             return null;
           }
         } else {
-          print(
-            'Error polling status: ${response.statusCode} - ${response.body}',
-          );
           return null;
         }
       } catch (e) {
-        print('Network error during polling: $e');
         return null;
       }
     }
@@ -277,15 +264,11 @@ class AITryOnController extends GetxController {
         final responseData = jsonDecode(response.body);
         return responseData['id']; // Return the prediction ID
       } else {
-        print(
-          'Error starting prediction: ${response.statusCode} - ${response.body}',
-        );
         appToastView(title: response.body);
         return null;
       }
     } catch (e) {
       // appToastView(title: ${e.toString()});
-      print('Network error: $e');
       return null;
     }
   }
@@ -321,7 +304,6 @@ class AITryOnController extends GetxController {
 
       if (result != null && result['status'] == 'completed') {
         // Process the output, e.g., display the image
-        print('Generated image URL: ${result['output'][0]}');
         processingProgress.value = 1.0;
         processingStage.value = 'Success!';
 
@@ -331,11 +313,9 @@ class AITryOnController extends GetxController {
         showPreview.value = true;
         // appToastView(title: '✨ AI Try-On complete! Powered by Fashn.AI');
       } else {
-        print('Try-on generation failed or timed out.');
         isLoading.value = false;
       }
     } else {
-      print('Failed to start try-on prediction.');
       isLoading.value = false;
     }
   }
@@ -343,7 +323,6 @@ class AITryOnController extends GetxController {
   // Download generated image from URL
   Future<File> _downloadImage(String imageUrl) async {
     try {
-      debugPrint('📥 Downloading generated image...');
 
       final response = await dio.Dio().get(
         imageUrl,
@@ -357,10 +336,8 @@ class AITryOnController extends GetxController {
 
       await file.writeAsBytes(response.data);
 
-      debugPrint('✅ Image saved: ${file.path}');
       return file;
     } catch (e) {
-      debugPrint('❌ Error downloading image: $e');
       rethrow;
     }
   }

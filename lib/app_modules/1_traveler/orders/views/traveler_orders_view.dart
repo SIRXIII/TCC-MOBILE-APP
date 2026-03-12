@@ -45,7 +45,6 @@ class _TravelerOrdersViewState extends State<TravelerOrdersView> {
   @override
   void initState() {
     super.initState();
-    debugPrint('initState --> TravelerOrdersView ');
     controller.getOrdersApiRequest();
   }
 
@@ -427,7 +426,6 @@ class _TravelerOrdersViewState extends State<TravelerOrdersView> {
                                         ).whenComplete(() {
                                           deliveriesController
                                               .resetFeedbackData();
-                                          print("Bottom sheet closed!");
                                         });
                                       }
                                     },

@@ -31,7 +31,6 @@ class TravelerHomeController extends GetxController {
       await Future.wait([filterOptionsApiRequest(), productsApiRequest()]);
     } catch (e, s) {
       // Handle or log any errors gracefully
-      debugPrint('Initialization error: $e\n$s');
     }
   }
 
@@ -67,7 +66,6 @@ class TravelerHomeController extends GetxController {
   }
 
   Future<void> filterOptionsApiRequest() async {
-    debugPrint('filterOptionsApiRequest --> ');
 
     filtersRequestLoader(true);
 
@@ -120,7 +118,6 @@ class TravelerHomeController extends GetxController {
     String category = '',
     FilterModel? filterModel,
   }) async {
-    debugPrint('productsApiRequest --> ');
 
     productsApiRequestLoader(true);
 
@@ -235,7 +232,6 @@ class TravelerHomeController extends GetxController {
   final TextEditingController searchController = TextEditingController();
 
   void searchProducts(String query) {
-    debugPrint('setDestination --> $query');
     searchText.value = query;
     productsApiRequest();
   }

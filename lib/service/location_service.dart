@@ -101,7 +101,6 @@ class LocationService {
         throw Exception('No address found for the coordinates');
       }
     } catch (e) {
-      print('Error getting location with address: $e');
       return null;
     }
   }
@@ -171,7 +170,6 @@ class LocationService {
       }
       return null;
     } catch (e) {
-      print('Error getting address from coordinates: $e');
       return null;
     }
   }
@@ -208,7 +206,6 @@ class LocationService {
       }
       return null;
     } catch (e) {
-      print('Error getting coordinates from address: $e');
       return null;
     }
   }

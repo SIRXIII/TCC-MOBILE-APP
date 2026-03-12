@@ -331,9 +331,6 @@ class DeliveriesDetailsView extends StatelessWidget {
             Spacer(),
             InkWell(
               onTap: () {
-                debugPrint(
-                  'Chat with traveler --> ${_appGlobal.getSelectedDelivery.getOrderId()} - ${_appGlobal.getSelectedDelivery.traveler?.getId() ?? ''}',
-                );
 
                 AppGlobal.instance.chatWith = 'Traveler';
                 AppGlobal.instance.orderId = _appGlobal.getSelectedDelivery
@@ -402,9 +399,6 @@ class DeliveriesDetailsView extends StatelessWidget {
             // Spacer(),
             InkWell(
               onTap: () {
-                debugPrint(
-                  'Chat with Partner --> ${_appGlobal.getSelectedDelivery.getOrderId()} - ${_appGlobal.getSelectedDelivery.partner?.getId() ?? ''}',
-                );
 
                 _appGlobal.chatWith = 'Partner';
                 _appGlobal.ticketId = _appGlobal.getSelectedDelivery

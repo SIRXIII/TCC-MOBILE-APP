@@ -95,10 +95,8 @@ class StripeService {
         );
       }
     } on PlatformException catch (err) {
-      debugPrint('PlatformException --> $err');
       return StripeService.getPlatformExceptionErrorResult(err);
     } catch (err) {
-      debugPrint('StripeTransactionResponse --> $err');
       return StripeTransactionResponse(
         message: 'Transaction failed: ${err.toString()}',
         success: false,
@@ -139,20 +137,15 @@ class StripeService {
       // if (from == 'wallet') parameter['metadata[order_id]'] = orderId;
       // if (from == 'order') parameter['metadata[order_id]'] = awaitedOrderID;
 
-      debugPrint('createPaymentIntent --> ${StripeService.headers}');
       var response = await http.post(
         Uri.parse(StripeService.paymentApiUrl),
         body: parameter,
         headers: StripeService.headers,
       );
 
-      debugPrint(
-        'createPaymentIntent --> jsonDecode --> ${jsonDecode(response.body.toString())}',
-      );
 
       return jsonDecode(response.body.toString());
     } catch (err) {
-      debugPrint('createPaymentIntent --> err --> $err');
     }
     return null;
   }

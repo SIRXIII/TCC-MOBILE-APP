@@ -410,7 +410,6 @@ class RatingFilterWidget extends StatelessWidget {
                 value: rating,
                 groupValue: controller.selectedRating.value,
                 onChanged: (value) {
-                  debugPrint('Rating Value: $value');
                   controller.setRating(value!.toDouble());
                   controller.selectedRating.value = value;
                 },

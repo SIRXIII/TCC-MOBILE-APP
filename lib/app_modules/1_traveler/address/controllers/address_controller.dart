@@ -41,7 +41,6 @@ class AddressController extends GetxController {
   var addAddressApiRequestLoader = false.obs;
 
   Future<void> addAddressApiRequest({required Address address}) async {
-    debugPrint('addAddressApiRequest --> ${address.getType()}');
 
     if (address.getType().isEmpty) {
       appToastView(title: 'Address type is required');
@@ -141,7 +140,6 @@ class AddressController extends GetxController {
   }
 
   Future<void> getAddressApiRequest() async {
-    debugPrint('getAddressApiRequest --> ');
 
     getAddressApiRequestLoader(true);
 
@@ -170,7 +168,6 @@ class AddressController extends GetxController {
   /// Delete Address
   var deleteAddressApiRequestLoader = false.obs;
   Future<void> deleteAddressApiRequest(String addressId) async {
-    debugPrint('deleteAddressApiRequest --> ');
 
     deleteAddressApiRequestLoader(true);
 
@@ -248,18 +245,6 @@ class AddressController extends GetxController {
                             ? item["address"]["city"]
                             : item["address"]["state"];
                         postalCode = item["address"]["postcode"];
-                        print("Selected lat: ${item.toString()}");
-                        print("Selected lat: ${item["lat"]}");
-                        print("Selected lon: ${item["lon"]}");
-                        print("display_name: ${item["display_name"]}");
-                        print("name: ${item["name"]}");
-                        print(
-                          "country_code: ${item["address"]["country_code"]}",
-                        );
-                        print("country: ${item["address"]["country"]}");
-                        print("state: ${item["address"]["state"]}");
-                        print("city: ${item["address"]["city"]}");
-                        print("postcode: ${item["address"]["postcode"]}");
                         Get.back();
                       },
                     );

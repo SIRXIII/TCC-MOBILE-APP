@@ -29,7 +29,6 @@ class PusherChaController extends GetxController {
   /// onInit
   @override
   void onInit() {
-    debugPrint('onInit --> PusherChaController');
 
     super.onInit();
     _initPusher();
@@ -37,7 +36,6 @@ class PusherChaController extends GetxController {
 
   /// _initPusher
   Future<void> _initPusher() async {
-    debugPrint('_initPusher --> ');
 
     // ticketId =
     //     UserPreferences.instance.selectedUserType == AccountTypeEnum.traveler
@@ -54,7 +52,6 @@ class PusherChaController extends GetxController {
 
   /// _handleEvent
   void _handleEvent(String event, dynamic data) {
-    debugPrint('_handleEvent --> $event - $data');
 
     // debugPrint('addMessage --> $decoded');
     getSupportMessagesApiRequest(_appGlobal.ticketId);
@@ -70,7 +67,6 @@ class PusherChaController extends GetxController {
   // -----------------------------------
 
   Future<void> addMessageApiRequest() async {
-    debugPrint('addMessageApiRequest --> ');
 
     isSending(true);
 
@@ -130,7 +126,6 @@ class PusherChaController extends GetxController {
   // }
 
   Future<void> getSupportMessagesApiRequest(int ticketId) async {
-    debugPrint('getSupportMessagesApiRequest --> ');
 
     getSupportMessagesApiRequestLoader(messagesList.isEmpty);
 
@@ -159,7 +154,6 @@ class PusherChaController extends GetxController {
   /// onClose
   @override
   void onClose() {
-    debugPrint('onClose --> ');
     _pusherService.disconnect();
     super.onClose();
   }

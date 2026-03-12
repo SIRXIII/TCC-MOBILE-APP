@@ -58,7 +58,6 @@ class ChatController extends GetxController {
 
   // Load user conversations
   Future<void> _loadConversations() async {
-    debugPrint('_loadConversations --> $currentUserId');
     try {
       isLoading.value = true;
 
@@ -75,7 +74,6 @@ class ChatController extends GetxController {
             .toList(),
       );
     } catch (error) {
-      print('Error loading conversations: $error');
       Get.snackbar('Error', 'Failed to load conversations');
     } finally {
       isLoading.value = false;
@@ -87,8 +85,6 @@ class ChatController extends GetxController {
     if (AppGlobal.instance.chatWith == 'Partner') {
       receiverId = 'PAR-$receiverId';
     }
-    debugPrint('loadMessages --> $currentUserId');
-    debugPrint('loadMessages --> $receiverId');
     try {
       isLoading.value = true;
       final conversationId = _generateConversationId(currentUserId, receiverId);
@@ -114,7 +110,6 @@ class ChatController extends GetxController {
       // Set up real-time listener
       _setupMessagesListener(conversationId);
     } catch (error) {
-      print('Error loading messages: $error');
       Get.snackbar('Error', 'Failed to load messages');
     } finally {
       isLoading.value = false;
@@ -146,7 +141,6 @@ class ChatController extends GetxController {
   Future<void> sendTextMessage(String receiverId, String message) async {
     if (message.trim().isEmpty) return;
 
-    debugPrint('sendTextMessage --> ');
 
     if (AppGlobal.instance.chatWith == 'Partner') {
       receiverId = 'PAR-$receiverId';
@@ -187,7 +181,6 @@ class ChatController extends GetxController {
       isSending.value = false;
     } catch (error) {
       isSending.value = false;
-      print('Error sending message: $error');
       Get.snackbar('Error', 'Failed to send message');
     }
   }
@@ -222,7 +215,6 @@ class ChatController extends GetxController {
       isSending.value = false;
     } catch (error) {
       isSending.value = false;
-      print('Error sending image: $error');
       Get.snackbar('Error', 'Failed to send image');
     }
   }
@@ -276,7 +268,6 @@ class ChatController extends GetxController {
             FirebaseConstants.updatedAt: FieldValue.serverTimestamp(),
           });
     } catch (error) {
-      print('Error marking messages as read: $error');
     }
   }
 
@@ -324,7 +315,6 @@ class ChatController extends GetxController {
       messages.clear();
       Get.snackbar('Success', 'Conversation cleared');
     } catch (error) {
-      print('Error clearing conversation: $error');
       Get.snackbar('Error', 'Failed to clear conversation');
     }
   }

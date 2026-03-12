@@ -376,7 +376,6 @@ class _DeliveriesViewState extends State<DeliveriesView> {
                                     backgroundColor: Colors.transparent,
                                   ).whenComplete(() {
                                     controller.resetFeedbackData();
-                                    print("Bottom sheet closed!");
                                     // 🔥 Your close logic here
                                     // controller.clearFeedback();
                                     // refresh something

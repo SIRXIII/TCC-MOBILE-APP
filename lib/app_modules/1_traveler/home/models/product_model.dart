@@ -279,7 +279,6 @@ class Product {
   // }
 
   List<ProductColor> get productColors {
-    debugPrint("Product Colors: $color");
     if (color == null || color == '' || color!.contains('#')) {
       return [];
     }

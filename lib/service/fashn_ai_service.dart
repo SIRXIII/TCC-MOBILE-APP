@@ -16,15 +16,9 @@ class FashnAIService {
   /// Get your API key from: https://fashn.ai
   static void initialize({required String apiKey}) {
     _apiKey = apiKey;
-    debugPrint('🚀 Fashn.AI Base URL: $_baseUrl');
     if (apiKey.isNotEmpty) {
-      debugPrint(
-        '🔑 Fashn.AI API Key: ${apiKey.substring(0, 3)}...${apiKey.substring(apiKey.length - 4)}',
-      );
     } else {
-      debugPrint('⚠️ Fashn.AI API Key is empty!');
     }
-    debugPrint('✅ Fashn.AI service initialized');
   }
 
   /// Check if service is properly configured

@@ -133,7 +133,6 @@ class LocationPermissionView extends StatelessWidget {
 
   void _requestLocationPermission(BuildContext context) {
     // Implement location permission logic here
-    print('Location permission requested');
 
     // After permission, navigate to next screen
     // Navigator.push(context, MaterialPageRoute(builder: (context) => NextScreen()));
